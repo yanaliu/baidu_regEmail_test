@@ -1,0 +1,49 @@
+body{
+    font-size: 14px;
+    color: #666;
+}
+.header {
+    height: 300px;
+}
+.content {
+    height: 250px;
+}
+.footer {
+    height: 200px;
+}
+div {
+    text-align: center;
+}
+#logoimg {
+    height: 130px;
+}
+.logo {
+    padding-top: 100px;
+    height: 150px;
+}
+.nav {
+}
+input[type=text] {
+    height: 30px;
+    width: 400px;
+}
+input[type=submit] {
+    height: 30px;
+    width: 100px;
+}
+.search {
+    height: 60px;
+}
+.bk {
+    height: 120px;
+}
+#dtimg {
+    height: 15px;
+    width: 15px;
+}
+.aq {
+    height: 40px;
+}
+.tk {
+    height: 40px;
+}

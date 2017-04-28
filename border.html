@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>border</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+        .box1 {
+            border: 5px solid black;
+        }
+        .box2{
+            /*border-top: 5px solid red;*/
+            /*border-right: 5px solid green;*/
+            /*border-bottom: 5px solid blue;*/
+            /*border-left: 5px solid purple;*/
+            border-width:5px;
+            border-style:solid;
+            border-color:red green blue purple;
+        }
+        .box3 {
+            border: 5px solid red;
+            /*border-right: 5px dashed red;*/
+            border-right-style:dashed;
+        }
+        .box4 {
+             border: 5px solid red;
+             border-style:solid dashed;
+         }
+        .box5 {
+            border: 5px solid black;
+            border-bottom: none;
+        }
+        .box6 {
+            width: 0px;
+            height: 0px;
+            border-width:25px;
+            border-style:solid;
+            border-color:red white blue white;
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div class="box6"></div>
+</body>
+</html>
