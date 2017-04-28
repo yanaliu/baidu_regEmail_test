@@ -5,6 +5,15 @@
     <title>网易注册页面</title>
     <style>
         body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {margin:0;padding:0}
+        body {
+            font-size: 12px;
+            color: #333;
+            font-family:"宋体";
+        }
+        a{
+            text-decoration: none;
+            color: #ccc;
+        }
         .header {
             width: 960px;
             height: 80px;
@@ -32,9 +41,9 @@
             color:#ccc;
         }
         .links a {
-            text-decoration: none;
-            font-size:12px;
-            color: #ccc;
+            /*text-decoration: none;*/
+            /*font-size:12px;*/
+            /*color: #ccc;*/
             line-height:27px;
         }
         .content {
@@ -61,6 +70,7 @@
         .bottom {
             width: 960px;
             height: 562px;
+            color: rgb(85,85,85);
         }
         .article {
             width: 642px;
@@ -69,27 +79,106 @@
             padding-top: 50px;
             padding-left:80px;
             box-sizing: border-box;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-top: none;
+            box-sizing: border-box;
         }
         .articleTop {
             width: 560px;
             height: 60px;
-            background-color: red;
         }
         .articleTop ul{
             width: 412px;
             height: 34px;
             list-style: none;
+            /*background-image: url(./img/tab.jpg);*/
+            /*background-repeat:no-repeat;*/
+            /*background-position: left 0;*/
+            background: url("./img/tab.jpg") no-repeat left 0;
         }
         .articleTop ul li {
             width: 137px;
             height: 34px;
             float: left;
-            background-color: skyblue;
+            line-height: 34px;
+            text-align: center;
+        }
+        .articleTop ul li a {
+            display: inline-block;
+            width: 137px;
+            height: 34px;
         }
         .aBottom {
             width: 560px;
             height: 373px;
-            background-color: green;
+        }
+        #bot1,#bot2 {
+            display: none;
+        }
+        .aBottom input[type=submit] {
+            width: 119px;
+            height: 37px;
+            background: url(./img/logo.png) no-repeat -144px -360px;
+            border: none;
+            font-size:20px;
+            margin-left:80px;
+            color: white;
+            margin-top:25px;
+        }
+        .line {
+            width: 413px;
+            height: 28px;
+
+        }
+        /*.line span{*/
+            /*height: 28px;*/
+            /*width: 60px;*/
+            /*float: left;*/
+            /*line-height:28px;*/
+            /*text-align: right;*/
+        /*}*/
+        .line label{
+            height: 28px;
+            width: 60px;
+            float: left;
+            line-height:28px;
+            text-align: right;
+        }
+        #start {
+            color: red;
+            width: 0;
+            margin-right:4px;
+        }
+        .line div {
+            height: 28px;
+            width: 333px;
+            float: right;
+        }
+        .line div input {
+            width: 214px;
+            height: 24px;
+        }
+        .line div select {
+            width: 100px;
+            height: 24px;
+        }
+        .vcode {
+            float: left;
+        }
+        .line div img {
+            width: 100px;
+            height: 28px;
+            float: left;
+            margin-left:10px;
+        }
+        .aBottom p {
+            line-height:28px;
+            margin-left:80px;
+            color: rgb(153,153,153);
+        }
+        .line div .spe {
+            width: 324px;
         }
         .aside {
             width: 318px;
@@ -106,12 +195,37 @@
             width: 960px;
             height: 48px;
             margin:0 auto;
-            background-color: blue;
         }
-
+        .footer p {
+            color: #ccc;
+            text-align: center;
+            line-height: 48px;
+        }
     </style>
+    <script>
+        window.onload = function () {
+            var uls = document.getElementById("ulli");
+            var allA = uls.getElementsByTagName("a");
+            for(let it = 0; it < allA.length; it++) {
+                allA[it].addEventListener("click", function() {
+                    uls.style.backgroundPositionY = -(it === 0 ? 0 : (it === 1 ? 59 : 112)) + "px";
+                    for(let i = 0; i < 3; i++) {
+                        var bot = document.getElementById("bot"+i);
+                        if(i === it) {
+                            bot.style.display = "block";
+                        } else {
+                            bot.style.display = "none";
+                        }
+                    }
+
+//                    myFunction(it);
+                });
+            }
+        }
+    </script>
 </head>
 <body>
+    <!--头部开始-->
     <div class="header">
         <div class="logo">
             <a href="http://mail.163.com/" title="网易163免费邮" target="_blank"></a>
@@ -124,26 +238,238 @@
             <a href="http://help.mail.163.com/feedback.do?m=add&categoryName=%e6%b3%a8%e5%86%8c" target="_blank">反馈意见</a>
         </div>
     </div>
+    <!--内容开始-->
     <div class="content">
+        <!--内容头部-->
         <div class="top">
             <h1>欢迎注册无限容量的网易邮箱！邮件地址可以登录使用其他网易旗下产品。</h1>
         </div>
+        <!--内容底部-->
         <div class="bottom">
+            <!--注册部分-->
             <div class="article">
                 <div class="articleTop">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                    <ul id="ulli">
+                        <li>
+                            <a href="#" >注册字母邮箱</a>
+                        </li>
+                        <li>
+                            <a href="#" >注册手机号码邮箱</a>
+                        </li>
+                        <li>
+                            <a href="#" >注册VIP邮箱</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="aBottom"></div>
+                <div id="bot0" class="aBottom">
+                    <div class="line">
+                        <label for="mail">
+                            <span id="start">*</span>邮件地址
+                        </label>
+                        <!--<span><span id="start">*</span></span>-->
+                        <div>
+                            <input type="text" id="mail">@<select>
+                                <option value="163.com">163.com</option>
+                                <option value="126.com">126.com</option>
+                                <option value="inj.net">inj.net</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p>6~18个字符，可使用字母、数字、下划线，需以字母开头</p>
+                    <div class="line">
+                        <label for="psd">
+                            <span id="start">*</span>密码
+                        </label>
+                        <!--<span><span id="start">*</span></span>-->
+                        <div>
+                            <input type="password" class="spe" id="psd">
+                        </div>
+                    </div>
+                    <p>6~16个字符，区分大小写</p>
+                    <div class="line">
+                        <label for="rpsd">
+                            <span id="start">*</span>确认密码
+                        </label>
+                        <!--<span><span id="start">*</span>确认密码</span>-->
+                        <div>
+                            <input type="password" class="spe" id="rpsd">
+                        </div>
+                    </div>
+                    <p>请再次填写密码</p>
+                    <div class="line">
+                        <label for="phone">
+                            <span id="start">*</span>手机号码
+                        </label>
+                        <!--<span><span id="start">*</span>手机号码</span>-->
+                        <div>
+                            <input type="password" class="spe" id="phone">
+                        </div>
+                    </div>
+                    <p>忘记密码时，可以通过该手机号码快速找回密码</p>
+                    <div class="line">
+                        <label for="vc">
+                            <span id="start">*</span>验证码
+                        </label>
+                        <!--<span><span id="start">*</span>验证码</span>-->
+                        <div>
+                            <input type="text" class="vcode" id="vc">
+                            <img src="./img/call.do.jpg" alt="">
+                        </select>
+                        </div>
+                    </div>
+                    <p>请填写图片中的字符，不区分大小写</p>
+                    <p>
+                        <input type="checkbox" checked>
+                        同意<a href="http://reg.163.com/agreement.shtml" target="_blank">"服务条款"</a>和<a
+                            href="http://reg.163.com/agreement_game.shtml" target="_blank">"隐私权相关政策"</a>
+                    </p>
+                    <input type="submit" value="立即注册">
+                </div>
+                <div id="bot1" class="aBottom">
+                    <div class="line">
+                        <label for="mail">
+                            <span id="start">*</span>手机号
+                        </label>
+                        <!--<span><span id="start">*</span></span>-->
+                        <div>
+                            <input type="text" id="mail">@<select>
+                                <option value="163.com">163.com</option>
+                                <option value="126.com">126.com</option>
+                                <option value="inj.net">inj.net</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p>6~18个字符，可使用字母、数字、下划线，需以字母开头</p>
+                    <div class="line">
+                        <label for="psd">
+                            <span id="start">*</span>密码
+                        </label>
+                        <!--<span><span id="start">*</span></span>-->
+                        <div>
+                            <input type="password" class="spe" id="psd">
+                        </div>
+                    </div>
+                    <p>6~16个字符，区分大小写</p>
+                    <div class="line">
+                        <label for="rpsd">
+                            <span id="start">*</span>确认密码
+                        </label>
+                        <!--<span><span id="start">*</span>确认密码</span>-->
+                        <div>
+                            <input type="password" class="spe" id="rpsd">
+                        </div>
+                    </div>
+                    <p>请再次填写密码</p>
+                    <div class="line">
+                        <label for="phone">
+                            <span id="start">*</span>手机号码
+                        </label>
+                        <!--<span><span id="start">*</span>手机号码</span>-->
+                        <div>
+                            <input type="password" class="spe" id="phone">
+                        </div>
+                    </div>
+                    <p>忘记密码时，可以通过该手机号码快速找回密码</p>
+                    <div class="line">
+                        <label for="vc">
+                            <span id="start">*</span>验证码
+                        </label>
+                        <!--<span><span id="start">*</span>验证码</span>-->
+                        <div>
+                            <input type="text" class="vcode" id="vc">
+                            <img src="./img/call.do.jpg" alt="">
+                        </select>
+                        </div>
+                    </div>
+                    <p>请填写图片中的字符，不区分大小写</p>
+                    <p>
+                        <input type="checkbox" checked>
+                        同意<a href="http://reg.163.com/agreement.shtml" target="_blank">"服务条款"</a>和<a
+                            href="http://reg.163.com/agreement_game.shtml" target="_blank">"隐私权相关政策"</a>
+                    </p>
+                    <input type="submit" value="立即注册">
+                </div>
+                <div id="bot2" class="aBottom">
+                    <div class="line">
+                        <label for="mail">
+                            <span id="start">*</span>用户名
+                        </label>
+                        <!--<span><span id="start">*</span></span>-->
+                        <div>
+                            <input type="text" id="mail">@<select>
+                                <option value="163.com">163.com</option>
+                                <option value="126.com">126.com</option>
+                                <option value="inj.net">inj.net</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p>6~18个字符，可使用字母、数字、下划线，需以字母开头</p>
+                    <div class="line">
+                        <label for="psd">
+                            <span id="start">*</span>密码
+                        </label>
+                        <!--<span><span id="start">*</span></span>-->
+                        <div>
+                            <input type="password" class="spe" id="psd">
+                        </div>
+                    </div>
+                    <p>6~16个字符，区分大小写</p>
+                    <div class="line">
+                        <label for="rpsd">
+                            <span id="start">*</span>确认密码
+                        </label>
+                        <!--<span><span id="start">*</span>确认密码</span>-->
+                        <div>
+                            <input type="password" class="spe" id="rpsd">
+                        </div>
+                    </div>
+                    <p>请再次填写密码</p>
+                    <div class="line">
+                        <label for="phone">
+                            <span id="start">*</span>手机号码
+                        </label>
+                        <!--<span><span id="start">*</span>手机号码</span>-->
+                        <div>
+                            <input type="password" class="spe" id="phone">
+                        </div>
+                    </div>
+                    <p>忘记密码时，可以通过该手机号码快速找回密码</p>
+                    <div class="line">
+                        <label for="vc">
+                            <span id="start">*</span>验证码
+                        </label>
+                        <!--<span><span id="start">*</span>验证码</span>-->
+                        <div>
+                            <input type="text" class="vcode" id="vc">
+                            <img src="./img/call.do.jpg" alt="">
+                        </select>
+                        </div>
+                    </div>
+                    <p>请填写图片中的字符，不区分大小写</p>
+                    <p>
+                        <input type="checkbox" checked>
+                        同意<a href="http://reg.163.com/agreement.shtml" target="_blank">"服务条款"</a>和<a
+                            href="http://reg.163.com/agreement_game.shtml" target="_blank">"隐私权相关政策"</a>
+                    </p>
+                    <input type="submit" value="立即注册">
+                </div>
             </div>
+            <!--邮箱大师-->
             <div class="aside">
                 <img src="./img/reg_master.gif" alt="邮箱大师">
             </div>
         </div>
     </div>
-    <div class="footer"></div>
+    <!--尾部开始-->
+    <div class="footer">
+        <p>
+            <a href="#">关于网易</a>
+            <a href="#">关于网易免费邮</a>
+            <a href="#">邮箱官方博客</a>
+            <a href="#">客户服务</a>
+            <a href="#">隐私政策</a>
+            |  网易公司版权所有 © 1997-2017
+        </p>
+    </div>
 </body>
 </html>
