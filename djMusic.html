@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>djMusic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url("./img/hello.jpg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+        ul {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom:100px;
+            left: 50%;
+            margin-left: -100px;
+            text-align: center;
+            transform-style: preserve-3d;
+            -webkit-animation:;
+            -o-animation:;
+            animation:sport 6s linear 0s infinite normal ;
+            /*pres*/
+        }
+        ul li {
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            font-size:60px;
+            line-height:200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+        }
+        ul li:nth-child(1) {
+            transform: rotateY(60deg) translateZ(200px);
+        }
+        ul li:nth-child(2) {
+            transform: rotateY(120deg) translateZ(200px);
+        }
+        ul li:nth-child(3) {
+            transform: rotateY(180deg) translateZ(200px);
+        }
+        ul li:nth-child(4) {
+            transform: rotateY(240deg) translateZ(200px);
+        }
+        ul li:nth-child(5) {
+            transform: rotateY(300deg) translateZ(200px);
+        }
+        ul li:nth-child(6) {
+            transform: rotateY(360deg) translateZ(200px);
+        }
+        ul:hover {
+            animation-play-state: paused;
+        }
+        ul:hover li img {
+            opacity: 0.5;
+        }
+        ul li:hover img {
+            opacity: 1;
+        }
+        ul li img {
+            width: 200px;
+            height: 200px;
+            border: 5px solid skyblue;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        @keyframes sport {
+            from {
+                /*固定不变的写在前面，变化的写在后面*/
+                transform: rotateX(-10deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(-10deg) rotateY(360deg);
+            }
+        }
+        .heart {
+            width: 173px;
+            height: 157px;
+            position: absolute;
+            bottom: 100px;
+            left: 100px;
+            -webkit-animation:;
+            -o-animation:;
+            animation:move 10s linear 0s infinite normal;
+        }
+        @keyframes move {
+            0% {
+                left: 100px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            20% {
+                left: 300px;
+                bottom: 500px;
+                opacity: 0;
+            }
+            40% {
+                left: 800px;
+                bottom: 800px;
+                opacity: 1;
+            }
+            60% {
+                left: 700px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            80% {
+                left: 1200px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            100% {
+                left: 800px;
+                bottom: -200px;
+                opacity:0;
+            }
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="./img/dj1.jpg" alt=""></li>
+    <li><img src="./img/dj2.jpg" alt=""></li>
+    <li><img src="./img/dg3.jpg" alt=""></li>
+    <li><img src="./img/dj4.png" alt=""></li>
+    <li><img src="./img/dj5.jpeg" alt=""></li>
+    <li><img src="./img/dj6.png" alt=""></li>
+</ul>
+<img src="./img/xin.png" alt="" class="heart">
+<audio src="./img/djMusic.mp3" autoplay="autoplay" loop="loop"></audio>
+</body>
+</html>

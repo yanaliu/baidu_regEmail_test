@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+        ul {
+            width: 1000px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 100px auto;
+            list-style: none;
+            overflow: hidden;
+
+        }
+        ul li {
+            width: 200px;
+            height: 500px;
+            float: left;
+            /*transition: width 5s;*/
+            transition-property: width;
+            transition-duration: 2s;
+        }
+        ul:hover li {
+            width: 100px;
+        }
+        ul li:hover {
+            width: 600px;
+        }
+
+        div {
+            width: 1000px;
+            height: 100px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 60px;
+        }
+        div span{
+            /*width: 100px;*/
+            line-height: 100px;
+            display: inline-block;
+            /*background-color: red;*/
+            /*text-align: center;*/
+            transition: margin 2s;
+        }
+        div:hover span{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img src="./img/a-z.jpg" alt=""></li>
+    <li><img src="./img/hello.jpg" alt=""></li>
+    <li><img src="./img/a-z.jpg" alt=""></li>
+    <li><img src="./img/hello.jpg" alt=""></li>
+    <li><img src="./img/a-z.jpg" alt=""></li>
+</ul>
+<div>
+    <span>江</span>
+    <span>哥</span>
+    <span>带</span>
+    <span>你</span>
+    <span>狂</span>
+    <span>虐</span>
+    <span>H</span>
+    <span>5</span>
+</div>
+</body>
+</html>
